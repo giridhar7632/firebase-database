@@ -17,19 +17,21 @@ Everytime you submit the form, the input given will be updated to a realtime dat
 
 ## Prerequisites
 
+![Prerequisites](https://cloud-l2ccvbjwj.vercel.app/0screenshot_2020-11-09_213901.png)
+
 You should have some intermediate knowledge about HTML, CSS and JavaScript. Also some fundamentals of React and React-Hooks.
 
 ## Getting started
 
 ### Database
 
-![Database]()
+![Database](https://cloud-l2ccvbjwj.vercel.app/1screenshot_2020-11-09_220807.png)
 
 A database is an organized collection of structured information, or data, typically stored electronically in a computer system. Databases are more complex they are often developed using formal design and modeling techniques.
 
 ### Database as a service
 
-![Database as a service]()
+![Database as a service](https://cloud-l2ccvbjwj.vercel.app/2screenshot_2020-11-09_221151.png)
 
 Database as a service (DBaaS) is a cloud computing managed service offering that provides access to a database without requiring the setup of physical hardware, the installation of software or the need to configure the database. 
 
@@ -37,7 +39,7 @@ Database as a service (DBaaS) is a cloud computing managed service offering that
 
 ![Firebase]()
 
-Firebase is a realtime database created by google, which can be hosted in the cloud.
+The Firebase Realtime Database is a cloud-hosted database. Data is stored as JSON and synchronized in realtime to every connected client. We can store and sync data across all clients in realtime, and remains available when your app goes offline. 
 
 In this workshop, we will create a form, which stores data into firebase realtime database, when submitted, using [React](https://reactjs.org). 
 
