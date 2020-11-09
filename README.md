@@ -51,5 +51,5 @@ Fork this starter repl [here](https://repl.it/@Giridharhackclu/firebase-database
 ```javascript
 npx create-react-app firebase-database
 // after installed
-mpn install firebase
+npm install firebase
 ```
