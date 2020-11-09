@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './App.css'
+import fireBase from './Firebase'
 
 /*function useInput(initialValue){
    const [value,setValue] = useState(initialValue);
@@ -23,6 +24,8 @@ function App() {
   }
   function handleSubmit(e) {
     console.log(name, email)
+    let messageRef = fireBase.database().ref('messages')
+    messageRef.push([name, email])
     setName("")
     setEmail("")
     e.preventDefault()
