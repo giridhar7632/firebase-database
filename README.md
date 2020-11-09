@@ -37,7 +37,7 @@ Database as a service (DBaaS) is a cloud computing managed service offering that
 
 ### Firebase
 
-![Firebase](https://cloud-1swt5hmba.vercel.app/5firebase_realtime_database__1-_icon__dark_.png)
+<img src="https://cloud-1swt5hmba.vercel.app/5firebase_realtime_database__1-_icon__dark_.png" alt="Firebase REaltime Database" width="200px" height="auto"/>
 
 The Firebase Realtime Database is a cloud-hosted database. Data is stored as JSON and synchronized in realtime to every connected client. We can store and sync data across all clients in realtime, and remains available when your app goes offline. 
 
