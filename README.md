@@ -13,4 +13,12 @@ Have you ever created a database for a web applications? In this workshop we are
 
 [Live Demo](https://firebase-database.giridharhackclu.repl.co/).  [Source Code](https://repl.it/@Giridharhackclu/firebase-database#src/App.js).
 
+Everytime you submit the form, the input given will be updated to a realtime database.
 
+## Getting started
+
+### Database
+
+![Database]()
+
+A database is an organized collection of structured information, or data, typically stored electronically in a computer system. Where databases are more complex they are often developed using formal design and modeling techniques.
