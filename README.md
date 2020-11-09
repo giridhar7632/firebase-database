@@ -47,3 +47,9 @@ In this workshop, we will create a form, which stores data into firebase realtim
 
 We will be using [Repl.it](https://repl.it) for building our project. Repl.it is a online code editor, where you can code in many different languages without any installations.
 
+Fork this starter repl [here](https://repl.it/@Giridharhackclu/firebase-database-starter). It contains a `create-react-app` and `firebase` installed. Otherwise if you prefer to use local code-editor install both of them manually through `npm`.
+```javascript
+npx create-react-app firebase-database
+// after installed
+mpn install firebase
+```
