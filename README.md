@@ -204,62 +204,61 @@ function handleSubmit(e){
 ```
 
 <details>
-  <summary>The final `App.js` so far looks like.</summary>
-  ```javascript
+<summary>The final `App.js` so far looks like.</summary>
   
-    import React, { useState } from 'react';
-    import './App.css';
+```javascript
+import React, { useState } from 'react';
+import './App.css';
 
-    function App() {
-      const [name, setName] = useState("")
-      const [email, setEmail] = useState("")
-      const [submitted, setSubmitted] = useState(false)
+function App() {
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [submitted, setSubmitted] = useState(false)
 
-      function handleName(e) {
-        setName(e.target.value)
-      }
-      function handleEmail(e) {
-        setEmail(e.target.value)
-      }
-      function handleSubmit(e){
-        setSubmitted(true)
-        console.log(name, email, submitted)
-        setName("")
-        setEmail("")
-        setTimeout(() => {
-          setSubmitted(false)
-        }, 3000)
-        e.preventDefault()
-      }
+  function handleName(e) {
+    setName(e.target.value)
+  }
+  function handleEmail(e) {
+    setEmail(e.target.value)
+  }
+  function handleSubmit(e){
+    setSubmitted(true)
+    console.log(name, email, submitted)
+    setName("")
+    setEmail("")
+    setTimeout(() => {
+      setSubmitted(false)
+    }, 3000)
+    e.preventDefault()
+  }
 
-      return (
-        <div className="container">
-          <form>
-            <h1>Form</h1>
-            {submitted ? <p className="result"> Successfully submitted !!</p> : null}
-            <label type="Name: ">
-            <input 
-              type="text" 
-              value={name} 
-              onChange={handleName} 
-              placeholder="Your Name" 
-            />
-            </label>
-            <label type="Email: ">
-            <input 
-              type="email" 
-              value={email} 
-              onChange={handleEmail}
-              placeholder="Your Email" 
-            />
-            </label>
-            <button onClick={handleSubmit} > Submit </button>
-          </form>
-        </div>
-      );
-    }
+  return (
+    <div className="container">
+      <form>
+        <h1>Form</h1>
+        {submitted ? <p className="result"> Successfully submitted !!</p> : null}
+        <label type="Name: ">
+        <input 
+          type="text" 
+          value={name} 
+          onChange={handleName} 
+          placeholder="Your Name" 
+        />
+        </label>
+        <label type="Email: ">
+        <input 
+          type="email" 
+          value={email} 
+          onChange={handleEmail}
+          placeholder="Your Email" 
+        />
+        </label>
+        <button onClick={handleSubmit} > Submit </button>
+      </form>
+    </div>
+  );
+}
 
-    export default App;
-
-  ```
+export default App;
+```
 </details>
