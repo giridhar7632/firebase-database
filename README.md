@@ -88,7 +88,7 @@ If you use Google Analytics for your project, then configure it to `Default Acco
 
 ![Step-3](https://cloud-1swt5hmba.vercel.app/2screenshot_2020-11-09_223126.png)
 
-Click on `Continue` to finsh setting up your project. After project was created you will see something like this.
+Click on `Create Project` to finsh setting up your project. After project was created you will see something like this.
 
 ![Project setup](https://cloud-axyxh81oj.vercel.app/0screenshot_2020-11-10_122542.png)
 
@@ -185,6 +185,8 @@ function App() {
 
 export default App;
 ```
+
+Don't forget to import `useState` hook from react to use `state`.
 
 ### Submitting Forms
 
@@ -343,3 +345,19 @@ Data in Firebase is orgainsed in tree like structure using [JSON](https://www.w3
 
 All Firebase Realtime Database data is stored as JSON objects. You can think of the database as a cloud-hosted JSON tree. Unlike a SQL database, there are no tables or records. When you add data to the JSON tree, it becomes a node in the existing JSON structure with an associated key. You can provide your own keys, such as user IDs or semantic names, or they can be provided for you using `push()`. Learn more about Firebase data [here](https://firebase.google.com/docs/database/web/structure-data?authuser=0).
 
+You can access data using references - `firebase.database.ref()` 
+
+Now `import` your `Firebase.js` component into your app component. And in the `handleSubmit` create a reference callled `messages` in the database. Now we have use the `push()` method to push the data into database. Learn more methods to add data to Firebase [here](https://firebase.google.com/docs/database/web/read-and-write).
+
+```javascript
+import fireBase from './Firebase'
+
+// All the previous code 
+
+function handleSubmit(e) {
+    let messageRef = fireBase.database().ref('messages')
+    messageRef.push([name, email])
+    
+    // All the previous code 
+  }
+```
