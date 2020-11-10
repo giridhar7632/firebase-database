@@ -76,11 +76,15 @@ Complete all the steps to create a firebase project. Name your project as you wi
 
 ![Step-1](https://cloud-1swt5hmba.vercel.app/1screenshot_2020-11-09_222741.png)
 
+Here is an optional step where you can use Google Analytics for your project, but in this workshop, you won't need it. After giving a name to your project click the continue button to proceed further.
+
 ![Step-2](https://cloud-1swt5hmba.vercel.app/4screenshot_2020-11-09_224518.png)
+
+If you use Google Analytics for your project, then configure it to `Default Account for Firebase`.
 
 ![Step-3](https://cloud-1swt5hmba.vercel.app/2screenshot_2020-11-09_223126.png)
 
-After project was created you will see something like this.
+Click on `Continue` to finsh setting up your project. After project was created you will see something like this.
 
 ![Project setup](https://cloud-axyxh81oj.vercel.app/0screenshot_2020-11-10_122542.png)
 
@@ -123,6 +127,7 @@ Click `Run` button and check your output. All the styles are prewritten. Don't w
 ![output](https://cloud-naxgpvrzh.vercel.app/0screenshot_2020-11-10_121610.png)
 
 ### Handling the form
+
 Handling forms is about how you handle the data when it changes value or gets submitted.
 
 In HTML, form data is usually handled by the DOM. In React, form data is usually handled by the components.
@@ -177,4 +182,83 @@ function App() {
 export default App;
 ```
 
+### Submitting Forms
 
+You can control the submit action by adding an event handler in the `onSubmit` attribute. After submitting, we will dispaly a message for 3 seconds. Create a state variable to track the whether the form is submitted or not. Also create a function `handleSubmit` and call it inside `onSubmit` attribute of button.
+
+```javascript
+const [submitted, setSubmitted] = useState(false)
+
+function handleSubmit(e){
+    setSubmitted(true)
+    console.log(name, email, submitted)
+    setName("")
+    setEmail("")
+    setTimeout(() => {
+      setSubmitted(false)
+    }, 3000)
+    e.preventDefault()
+  }
+
+<button onClick={handleSubmit} > Submit </button>
+```
+
+<details>
+  <summary>The final `App.js` so far looks like.</summary>
+  ```javascript
+    import React, { useState } from 'react';
+    import './App.css';
+
+    function App() {
+      const [name, setName] = useState("")
+      const [email, setEmail] = useState("")
+      const [submitted, setSubmitted] = useState(false)
+
+      function handleName(e) {
+        setName(e.target.value)
+      }
+      function handleEmail(e) {
+        setEmail(e.target.value)
+      }
+      function handleSubmit(e){
+        setSubmitted(true)
+        console.log(name, email, submitted)
+        setName("")
+        setEmail("")
+        setTimeout(() => {
+          setSubmitted(false)
+        }, 3000)
+        e.preventDefault()
+      }
+
+      return (
+        <div className="container">
+          <form>
+            <h1>Form</h1>
+            {submitted ? <p className="result"> Successfully submitted !!</p> : null}
+            <label type="Name: ">
+            <input 
+              type="text" 
+              value={name} 
+              onChange={handleName} 
+              placeholder="Your Name" 
+            />
+            </label>
+            <label type="Email: ">
+            <input 
+              type="email" 
+              value={email} 
+              onChange={handleEmail}
+              placeholder="Your Email" 
+            />
+            </label>
+            <button onClick={handleSubmit} > Submit </button>
+          </form>
+        </div>
+      );
+    }
+
+    export default App;
+
+  ```
+</details>
