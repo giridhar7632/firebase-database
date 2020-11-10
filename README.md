@@ -206,6 +206,7 @@ function handleSubmit(e){
 <details>
   <summary>The final `App.js` so far looks like.</summary>
   ```javascript
+  
     import React, { useState } from 'react';
     import './App.css';
 
