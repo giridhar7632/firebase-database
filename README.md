@@ -118,7 +118,7 @@ function App() {
 export default App;
 ```
 
-Click `Run` button and check your output.
+Click `Run` button and check your output. All the styles are prewritten. Don't wonder to see this output.
 
 ![output](https://cloud-naxgpvrzh.vercel.app/0screenshot_2020-11-10_121610.png)
 
