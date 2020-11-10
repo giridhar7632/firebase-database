@@ -29,6 +29,8 @@ You should have some intermediate knowledge about HTML, CSS and JavaScript. Also
 
 A database is an organized collection of structured information, or data, typically stored electronically in a computer system. Databases are more complex they are often developed using formal design and modeling techniques.
 
+There are many technologies like [MongoDB](https://www.mongodb.com/), and more to create database.
+
 ### Database as a service
 
 ![Database as a service](https://cloud-l2ccvbjwj.vercel.app/2screenshot_2020-11-09_221151.png)
@@ -40,6 +42,8 @@ Database as a service (DBaaS) is a cloud computing managed service offering that
 <img src="https://cloud-1swt5hmba.vercel.app/5firebase_realtime_database__1-_icon__dark_.png" alt="Firebase REaltime Database" width="200px" height="auto"/>
 
 The Firebase Realtime Database is a cloud-hosted database. Data is stored as JSON and synchronized in realtime to every connected client. We can store and sync data across all clients in realtime, and remains available when your app goes offline. 
+
+> Realtime means : Instead of typical HTTP requests, the Firebase Realtime Database uses data synchronization—every time data changes, any connected device receives that update within milliseconds. Provide collaborative and immersive experiences without thinking about networking code.
 
 In this workshop, we will create a form, which stores data into firebase realtime database, when submitted, using [React](https://reactjs.org). 
 
@@ -262,3 +266,75 @@ function App() {
 export default App;
 ```
 </details>
+
+Click `Run` button and check the output. Let's first `console.log` the value of inputs. If you get the value of inputs in the console, then you are good to go.
+
+![Submitting data](https://cloud-d4dcm2tr0.vercel.app/0ezgif.com-gif-maker__6_.gif)
+
+Upto now we created a form with which we can add data to our database.
+
+That means front-end part completed. 
+
+![Good job](https://cloud-ac5q22xg1.vercel.app/0good_job.gif)
+
+## Part-2
+
+### Creating Database
+
+Now open the [firebase console](https://console.firebase.google.com) you left before and open the current project folder. We can use firebase for different platforms. But for now, we are going to use it for `web(</>)`. Click on `</>` button. You will see something like this.
+
+![Console](https://cloud-j3vz1auk3.vercel.app/0ezgif.com-gif-maker__7_.gif)
+
+Then give your app a name. I'm going to give this name.
+
+![Add name](https://cloud-4zt4ppz2y.vercel.app/0screenshot_2020-11-10_145514.png)
+
+Click on `continue`. Then you will get `Firebase SDK` data. Every user have their own `API` key and Id. Copy the code in the `<script>`. This contains the data to access your firebase.
+
+![SDK Data](https://cloud-4zt4ppz2y.vercel.app/1screenshot_2020-11-10_145822.png)
+
+### Configuring Project with Firebase
+
+Then hop on to your `repl` and create a new file in `src` folder and name it as `Firebase.js`. Then import the `firebase` module, which is already installed and paste the data you copied in firebase. Your `Firebase.js` file will be like this with your information.
+
+```javascript
+import firebase from 'firebase'
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAcg8MxG_vX65Vfh2fAoH9tuyHUn85JqNQ",
+  authDomain: "test-form-f2df9.firebaseapp.com",
+  databaseURL: "https://test-form-f2df9.firebaseio.com",
+  projectId: "test-form-f2df9",
+  storageBucket: "test-form-f2df9.appspot.com",
+  messagingSenderId: "684489897467",
+  appId: "1:684367456467:web:7fff9d88d6accf5426ae0e",
+  measurementId: "G-YV81RWDHS5"
+};
+
+var fireBase = firebase.initializeApp(firebaseConfig)
+export default fireBase
+```
+
+This is for configuring firebase with our React project. Now let's create a realtime database on firebase. Go back to to your firebase console and click the `Realtime Database` on the sidebar.
+
+![Sidebar](https://cloud-2zamqusnb.vercel.app/0screenshot__3__li.jpg)
+
+Then Click on `Create Database`.
+
+![Create Database](https://cloud-4zhtbdxo9.vercel.app/0screenshot__4__li.jpg)
+
+Make sure you create it in `Test Mode`.
+
+![Test Mode](https://cloud-bugaglghj.vercel.app/0screenshot_2020-11-10_153651.png)
+
+Then your realtime database will be initiated with `null`(means, nothing in it).
+
+![Database](https://cloud-bugaglghj.vercel.app/1screenshot_2020-11-10_153751.png)
+
+The rules here are important. Initially firebase allows anyone to read and write data in database upto 30 days. You can change the settings at any time in the `Rules` tab.
+
+Now we created the database and configured it with our project. Then let's add data through the form.
+
+## Part-3
+
+
