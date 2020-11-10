@@ -337,4 +337,9 @@ Now we created the database and configured it with our project. Then let's add d
 
 ## Part-3
 
+### How is data organised in Firebase?
+
+Data in Firebase is orgainsed in tree like structure using [JSON](https://www.w3schools.com/js/js_json_intro.asp)(JavaScript Object Notation).
+
+All Firebase Realtime Database data is stored as JSON objects. You can think of the database as a cloud-hosted JSON tree. Unlike a SQL database, there are no tables or records. When you add data to the JSON tree, it becomes a node in the existing JSON structure with an associated key. You can provide your own keys, such as user IDs or semantic names, or they can be provided for you using `push()`. Learn more about Firebase data [here](https://firebase.google.com/docs/database/web/structure-data?authuser=0).
 
