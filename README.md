@@ -62,8 +62,6 @@ cd firebase-database
 npm install --save firebase
 ```
 
-
-
 ### Creating Firebase project
 
 You can access [Firebase](https://firebase.google.com/) with your [Google account](https://myaccount.google.com/). After signing in, click the `Go to console`  on top right corner.
@@ -82,4 +80,51 @@ Complete all the steps to create a firebase project. Name your project as you wi
 
 ![Step-3](https://cloud-1swt5hmba.vercel.app/2screenshot_2020-11-09_223126.png)
 
-After setting your project
+After project was created you will see something like this.
+
+![Project setup](https://cloud-axyxh81oj.vercel.app/0screenshot_2020-11-10_122542.png)
+
+Then hop on to repl.it and start coding.
+
+## Part-1
+
+### Create a form
+
+Now we are going to create a form to get the input from the user. Now we can say that forms in HTML are slightly different from that are in React. The form elements like `<input />`, `<select />`, `<textarea />` are responsible on their own to handle the user input and update their respective values. But in React, the forms are controlled by components using `state`. Learn more about React forms [here](https://reactjs.org/docs/forms.html).
+
+Go to `App.js` file, and create a `<form>`  with two `<input>` elements for Name and Email along with label, and a `Submit` button.
+
+```javascript
+import React from 'react';
+import './App.css';
+
+function App() {
+  return (
+    <div className="container">
+      <form>
+        <h1>Form</h1>
+        <label type="Name: ">
+        <input type="text" placeholder="Your Name" />
+        </label>
+        <label type="Email: ">
+        <input type="email" placeholder="Your Email" />
+        </label>
+        <button> Submit </button>
+      </form>
+    </div>
+  );
+}
+
+export default App;
+```
+
+Click `Run` button and check your output.
+
+![output](https://cloud-naxgpvrzh.vercel.app/0screenshot_2020-11-10_121610.png)
+
+### Handling the form
+Handling forms is about how you handle the data when it changes value or gets submitted.<br>
+In HTML, form data is usually handled by the DOM.<br>
+In React, form data is usually handled by the components.<br>
+When the data is handled by the components, all the data is stored in the component state.
+You can control changes by adding event handlers in the `onChange` attribute.
