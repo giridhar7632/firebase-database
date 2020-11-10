@@ -45,11 +45,41 @@ In this workshop, we will create a form, which stores data into firebase realtim
 
 ## Setting up..
 
+### Code editor
+
 We will be using [Repl.it](https://repl.it) for building our project. Repl.it is a online code editor, where you can code in many different languages without any installations.
 
-Fork this starter repl [here](https://repl.it/@Giridharhackclu/firebase-database-starter). It contains a `create-react-app` and `firebase` installed. Otherwise if you prefer to use local code-editor install both of them manually through `npm`.
+Fork this starter repl [here](https://repl.it/@Giridharhackclu/firebase-database-starter). It contains a [create-react-app](https://github.com/facebook/create-react-app) and [firebase](https://www.npmjs.com/package/firebase) installed. The starter-template contains all the styles required, so that we can concentrate on React and Firebase. Click the `RUN` button to check your template. You should see something like this.
+
+![Repl](https://cloud-3a2lu9qq3.vercel.app/1screenshot_2020-11-09_160050.png)
+
+If you prefer to use local code-editor install both of them manually through terminal.
+
 ```javascript
 npx create-react-app firebase-database
-// after installed
-npm install firebase
+// after installation
+cd firebase-database
+npm install --save firebase
 ```
+
+
+
+### Creating Firebase project
+
+You can access [Firebase](https://firebase.google.com/) with your [Google account](https://myaccount.google.com/). After signing in, click the `Go to console`  on top right corner.
+
+![Firebase](https://cloud-m3srogzel.vercel.app/0screenshot_2020-11-10_101346.png)
+
+Then in your console, If you don't have any projects yet, it will be clean and empty. Click on `Create project` to add a new project.
+
+![Console](https://cloud-1swt5hmba.vercel.app/0screenshot_2020-11-09_222607.png)
+
+Complete all the steps to create a firebase project. Name your project as you wish.
+
+![Step-1](https://cloud-1swt5hmba.vercel.app/1screenshot_2020-11-09_222741.png)
+
+![Step-2](https://cloud-1swt5hmba.vercel.app/4screenshot_2020-11-09_224518.png)
+
+![Step-3](https://cloud-1swt5hmba.vercel.app/2screenshot_2020-11-09_223126.png)
+
+After setting your project
