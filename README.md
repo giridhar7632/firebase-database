@@ -123,8 +123,58 @@ Click `Run` button and check your output.
 ![output](https://cloud-naxgpvrzh.vercel.app/0screenshot_2020-11-10_121610.png)
 
 ### Handling the form
-Handling forms is about how you handle the data when it changes value or gets submitted.<br>
-In HTML, form data is usually handled by the DOM.<br>
-In React, form data is usually handled by the components.<br>
-When the data is handled by the components, all the data is stored in the component state.
-You can control changes by adding event handlers in the `onChange` attribute.
+Handling forms is about how you handle the data when it changes value or gets submitted.
+
+In HTML, form data is usually handled by the DOM. In React, form data is usually handled by the components.
+
+When the data is handled by the components, all the data is stored in the component state. You can control changes by adding event handlers in the `onChange` attribute.
+
+Let's create two state variables each for name and email. Now add an event handler in the `onChange` attribute, and let the event handler update the state everytime you enter a letter. Also create `handleName` and `handleEmail` for updating values of respective inputs.
+
+```javascript
+import React, { useState } from 'react';
+import './App.css';
+
+function App() {
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+
+  // for handling name
+  function handleName(e) {
+    setName(e.target.value)
+  }
+  // for handling email
+  function handleEmail(e) {
+    setEmail(e.target.value)
+  }
+
+  return (
+    <div className="container">
+      <form>
+        <h1>Form</h1>
+        <label type="Name: ">
+        <input 
+          type="text" 
+          value={name} 
+          onChange={handleName} 
+          placeholder="Your Name" 
+        />
+        </label>
+        <label type="Email: ">
+        <input 
+          type="email" 
+          value={email} 
+          onChange={handleEmail}
+          placeholder="Your Email" 
+        />
+        </label>
+        <button> Submit </button>
+      </form>
+    </div>
+  );
+}
+
+export default App;
+```
+
+
