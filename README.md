@@ -29,7 +29,7 @@ You should have some intermediate knowledge about HTML, CSS and JavaScript. Also
 
 A database is an organized collection of structured information, or data, typically stored electronically in a computer system. Databases are more complex they are often developed using formal design and modeling techniques. Learn more about database [here](https://www.bbc.co.uk/bitesize/topics/zf2f9j6/articles/z8yk87h).
 
-### Database as a service
+### Database as a service 
 
 ![Database as a service](https://cloud-l2ccvbjwj.vercel.app/2screenshot_2020-11-09_221151.png)
 
@@ -514,6 +514,8 @@ In firebase, we can manage the data, all the **CRUD** operations.
 * Read - read the data, like displaying on the screen, etc.
 * Update - update the data
 * Delete - delete the specific node of data
+
+Learn more about CRUD operations [here](https://www.codecademy.com/articles/what-is-crud)
 
 You can test the realtime feature of firebase. You can see the submitted data in realtime. You don't even have to refresh.
 
