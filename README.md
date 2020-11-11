@@ -19,7 +19,7 @@ Everytime you submit the form, the input given will be updated to a realtime dat
 
 ![Prerequisites](https://cloud-l2ccvbjwj.vercel.app/0screenshot_2020-11-09_213901.png)
 
-You should have some intermediate knowledge about HTML, CSS and JavaScript. Also some fundamentals of React and React-Hooks.
+You should have some intermediate knowledge about HTML, CSS and JavaScript. Also some fundamentals of React and React-Hooks. 
 
 ## Getting started
 
@@ -27,15 +27,13 @@ You should have some intermediate knowledge about HTML, CSS and JavaScript. Also
 
 ![Database](https://cloud-l2ccvbjwj.vercel.app/1screenshot_2020-11-09_220807.png)
 
-A database is an organized collection of structured information, or data, typically stored electronically in a computer system. Databases are more complex they are often developed using formal design and modeling techniques.
-
-There are many technologies like [MongoDB](https://www.mongodb.com/), and more to create database.
+A database is an organized collection of structured information, or data, typically stored electronically in a computer system. Databases are more complex they are often developed using formal design and modeling techniques. Learn more about database [here](https://www.bbc.co.uk/bitesize/topics/zf2f9j6/articles/z8yk87h).
 
 ### Database as a service
 
 ![Database as a service](https://cloud-l2ccvbjwj.vercel.app/2screenshot_2020-11-09_221151.png)
 
-Database as a service (DBaaS) is a cloud computing managed service offering that provides access to a database without requiring the setup of physical hardware, the installation of software or the need to configure the database. 
+Database as a service (DBaaS) is a cloud computing managed service offering that provides access to a database without requiring the setup of physical hardware, the installation of software or the need to configure the database. It is a product which you can use easily, without creating and configuring. One of such type of products is `Firebase`, which is originally created by Google. `Firebase` is great, free(upto some extinct) and easy to use product. It has many services like authentication, cloud storage, realtime database, etc.. In this workshop we are going to use realtime database of Firebase.
 
 ### Firebase
 
@@ -44,6 +42,8 @@ Database as a service (DBaaS) is a cloud computing managed service offering that
 The Firebase Realtime Database is a cloud-hosted database. Data is stored as JSON and synchronized in realtime to every connected client. We can store and sync data across all clients in realtime, and remains available when your app goes offline. 
 
 > Realtime means : Instead of typical HTTP requests, the Firebase Realtime Database uses data synchronization—every time data changes, any connected device receives that update within milliseconds. Provide collaborative and immersive experiences without thinking about networking code.
+
+Learn more about Firebase [here](https://youtu.be/U5aeM5dvUpA)
 
 In this workshop, we will create a form, which stores data into firebase realtime database, when submitted, using [React](https://reactjs.org). 
 
@@ -59,9 +59,14 @@ Fork this starter repl [here](https://repl.it/@Giridharhackclu/firebase-database
 
 If you prefer to use local code-editor install both of them manually through terminal.
 
+Use `npx create-react-app` command in CLI to create a react project. Give it a name.
+
 ```javascript
 npx create-react-app firebase-database
-// after installation
+```
+
+After installing create-react-react, navigate into the folder and install firebase.
+```js
 cd firebase-database
 npm install --save firebase
 ```
@@ -84,7 +89,7 @@ Here is an optional step where you can use Google Analytics for your project, bu
 
 ![Step-2](https://cloud-1swt5hmba.vercel.app/4screenshot_2020-11-09_224518.png)
 
-If you use Google Analytics for your project, then configure it to `Default Account for Firebase`.
+If you use Google Analytics for your project, then configure it to `Default Account for Firebase`. 
 
 ![Step-3](https://cloud-1swt5hmba.vercel.app/2screenshot_2020-11-09_223126.png)
 
@@ -98,9 +103,12 @@ Then hop on to repl.it and start coding.
 
 ### Create a form
 
-Now we are going to create a form to get the input from the user. Now we can say that forms in HTML are slightly different from that are in React. The form elements like `<input />`, `<select />`, `<textarea />` are responsible on their own to handle the user input and update their respective values. But in React, the forms are controlled by components using `state`. Learn more about React forms [here](https://reactjs.org/docs/forms.html).
+Now we are going to create a form to get the input from the user. 
 
-Go to `App.js` file, and create a `<form>`  with two `<input>` elements for Name and Email along with label, and a `Submit` button.
+We can say that forms in HTML are slightly different from that are in React. The form elements like `<input />`, `<select />`, `<textarea />` are responsible on their own to handle the user input and update their respective values. But in React, the forms are controlled by components using `state`.
+Learn more about React forms [here](https://reactjs.org/docs/forms.html).
+
+Now navigate to `App.js` file, and create a `<form>`  with two `<input>` elements for `Name` and `Email` with respective labels, and a `Submit` button.
 
 ```javascript
 import React from 'react';
@@ -128,7 +136,7 @@ export default App;
 
 Click `Run` button and check your output. All the styles are prewritten. Don't wonder to see this output.
 
-![output](https://cloud-naxgpvrzh.vercel.app/0screenshot_2020-11-10_121610.png)
+![form output](https://cloud-naxgpvrzh.vercel.app/0screenshot_2020-11-10_121610.png)
 
 ### Handling the form
 
@@ -138,10 +146,71 @@ In HTML, form data is usually handled by the DOM. In React, form data is usually
 
 When the data is handled by the components, all the data is stored in the component state. You can control changes by adding event handlers in the `onChange` attribute.
 
-Let's create two state variables each for name and email. Now add an event handler in the `onChange` attribute, and let the event handler update the state everytime you enter a letter. Also create `handleName` and `handleEmail` for updating values of respective inputs.
+Let's create two state variables each for name and email. 
 
-```javascript
-import React, { useState } from 'react';
+Don't forget to import `useState` hook from react to use `state`.
+
+```jsx
+import React, { useState } from 'react';     //<----------- useState hook is imported here
+import './App.css'
+
+function App(){
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  
+  return(
+  //all the previous code
+  )
+}
+```
+  
+Now add an event handler in the `onChange` attribute, and let the event handler update the state everytime you enter a letter. 
+
+```jsx
+// all the previous code
+  return(
+    <div className="container">
+      <form>
+        <h1>Form</h1>
+        <label type="Name: ">
+        <input 
+          type="text" 
+          value={name} 
+          onChange={handleName}         //<--------------  event handler
+          placeholder="Your Name" 
+        />
+        </label>
+        <label type="Email: ">
+        <input 
+          type="email" 
+          value={email} 
+          onChange={handleEmail}          //<------------- event handler
+          placeholder="Your Email" 
+        />
+        </label>
+        <button> Submit </button>
+      </form>
+    </div>
+  )
+ ```
+
+Also create `handleName` and `handleEmail` for updating state with values of respective inputs.
+
+```js
+// for handling name
+function handleName(e) {
+  setName(e.target.value)
+}
+// for handling email
+function handleEmail(e) {
+  setEmail(e.target.value)
+}
+```
+
+At this stage our `App.js` looks like this.
+
+```jsx
+import React, { useState } from 'react'; 
 import './App.css';
 
 function App() {
@@ -186,26 +255,25 @@ function App() {
 export default App;
 ```
 
-Don't forget to import `useState` hook from react to use `state`.
-
 ### Submitting Forms
 
-You can control the submit action by adding an event handler in the `onSubmit` attribute. After submitting, we will dispaly a message for 3 seconds. Create a state variable to track the whether the form is submitted or not. Also create a function `handleSubmit` and call it inside `onSubmit` attribute of button.
+You can control the submit action by adding an event handler in the `onClick` attribute. Create a function `handleSubmit`. Let's first print the form data in `console`. Then after submission, clear the inputs.
 
 ```javascript
-const [submitted, setSubmitted] = useState(false)
-
+// for submitting form
 function handleSubmit(e){
-    setSubmitted(true)
-    console.log(name, email, submitted)
+    console.log(name, email)      //<----------- to print form data in console
     setName("")
     setEmail("")
-    setTimeout(() => {
-      setSubmitted(false)
-    }, 3000)
     e.preventDefault()
   }
+```
 
+Here, we prevented the default behaviour of the form using [preventDefault()](https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault) method.
+
+Call it inside `onClick` event attribute of button.
+
+```jsx
 <button onClick={handleSubmit} > Submit </button>
 ```
 
@@ -219,22 +287,22 @@ import './App.css';
 function App() {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
-  const [submitted, setSubmitted] = useState(false)
 
+  // for handling name
   function handleName(e) {
     setName(e.target.value)
   }
+  
+  // for handling email
   function handleEmail(e) {
     setEmail(e.target.value)
   }
+  
+  // for handling submit
   function handleSubmit(e){
-    setSubmitted(true)
-    console.log(name, email, submitted)
+    console.log(name, email)
     setName("")
     setEmail("")
-    setTimeout(() => {
-      setSubmitted(false)
-    }, 3000)
     e.preventDefault()
   }
 
@@ -242,7 +310,6 @@ function App() {
     <div className="container">
       <form>
         <h1>Form</h1>
-        {submitted ? <p className="result"> Successfully submitted !!</p> : null}
         <label type="Name: ">
         <input 
           type="text" 
@@ -273,7 +340,7 @@ Click `Run` button and check the output. Let's first `console.log` the value of 
 
 ![Submitting data](https://cloud-d4dcm2tr0.vercel.app/0ezgif.com-gif-maker__6_.gif)
 
-Upto now we created a form with which we can add data to our database.
+Now that we have a form for adding data to database.
 
 That means front-end part completed. 
 
@@ -297,10 +364,10 @@ Click on `continue`. Then you will get `Firebase SDK` data. Every user have thei
 
 ### Configuring Project with Firebase
 
-Then hop on to your `repl` and create a new file in `src` folder and name it as `Firebase.js`. Then import the `firebase` module, which is already installed and paste the data you copied in firebase. Your `Firebase.js` file will be like this with your information.
+Hop on to your code editor(repl) and create a new file in `src` folder. Name it as `Firebase.js`. Then import the `firebase` module, which is already installed and paste the data you copied from firebase. Your `Firebase.js` file will be like this with your information.
 
 ```javascript
-import firebase from 'firebase'
+import firebase from 'firebase'     //<--------------- importing firebase 
 
 const firebaseConfig = {
   apiKey: "AIzaSyAcg8MxG_vX65Vfh2fAoH9tuyHUn85JqNQ",
@@ -313,7 +380,7 @@ const firebaseConfig = {
   measurementId: "G-YV81RWDHS5"
 };
 
-var fireBase = firebase.initializeApp(firebaseConfig)
+var fireBase = firebase.initializeApp(firebaseConfig)     //<--------------- initialising firebase
 export default fireBase
 ```
 
@@ -325,7 +392,7 @@ Then Click on `Create Database`.
 
 ![Create Database](https://cloud-4zhtbdxo9.vercel.app/0screenshot__4__li.jpg)
 
-Make sure you create it in `Test Mode`.
+Make sure you create it in `Test Mode`, since we are just learning.
 
 ![Test Mode](https://cloud-bugaglghj.vercel.app/0screenshot_2020-11-10_153651.png)
 
@@ -339,25 +406,24 @@ Now we created the database and configured it with our project. Then let's add d
 
 ## Part-3
 
+Before adding data to our firebase, let's first understand how data is structured in firebase.
+
 ### How is data organised in Firebase?
 
 Data in Firebase is orgainsed in tree like structure using [JSON](https://www.w3schools.com/js/js_json_intro.asp)(JavaScript Object Notation).
 
 All Firebase Realtime Database data is stored as JSON objects. You can think of the database as a cloud-hosted JSON tree. Unlike a SQL database, there are no tables or records. When you add data to the JSON tree, it becomes a node in the existing JSON structure with an associated key. You can provide your own keys, such as user IDs or semantic names, or they can be provided for you using `push()`. Learn more about Firebase data [here](https://firebase.google.com/docs/database/web/structure-data?authuser=0).
 
-You can access data using references - `firebase.database.ref()` 
+You can access nodes of data using references - `firebase.database.ref()` 
 
-Now `import` your `Firebase.js` component into your app component. And in the `handleSubmit` create a reference callled `messages` in the database. Now we have use the `push()` method to push the data into database. Learn more methods to add data to Firebase [here](https://firebase.google.com/docs/database/web/read-and-write).
+Now `import` your `Firebase.js` component into your app component.
 
 ```javascript
-import fireBase from './Firebase'
+import React, { useState } from 'react';
+import './App.css';
+import fireBase from './Firebase';       // <------------------ importing 
 
 // All the previous code 
-
-function handleSubmit(e) {
-    let messageRef = fireBase.database().ref('messages')
-    messageRef.push([name, email])
-    
-    // All the previous code 
-  }
 ```
+
+In the `handleSubmit` create a reference called `messages` in the database. Now we have to use the `push()` method to add the data into database. Learn more methods to add data to Firebase [here](https://firebase.google.com/docs/database/web/read-and-write). 
