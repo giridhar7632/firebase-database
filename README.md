@@ -41,7 +41,7 @@ Database as a service (DBaaS) is a cloud computing managed service offering that
 
 The Firebase Realtime Database is a cloud-hosted database. Data is stored as JSON and synchronized in realtime to every connected client. We can store and sync data across all clients in realtime, and remains available when your app goes offline. 
 
-> Realtime means : Instead of typical HTTP requests, the Firebase Realtime Database uses data synchronization—every time data changes, any connected device receives that update within milliseconds. Provide collaborative and immersive experiences without thinking about networking code.
+> **Realtime means** : Instead of typical HTTP requests, the Firebase Realtime Database uses data synchronization—every time data changes, any connected device receives that update within milliseconds. Provide collaborative and immersive experiences without thinking about networking code.
 
 Learn more about Firebase [here](https://youtu.be/U5aeM5dvUpA)
 
@@ -421,9 +421,12 @@ Now `import` your `Firebase.js` component into your app component.
 ```javascript
 import React, { useState } from 'react';
 import './App.css';
-import fireBase from './Firebase';       // <------------------ importing 
+import fireBase from './Firebase';       // <------------------ importing Firebase configuration
 
 // All the previous code 
 ```
 
-In the `handleSubmit` create a reference called `messages` in the database. Now we have to use the `push()` method to add the data into database. Learn more methods to add data to Firebase [here](https://firebase.google.com/docs/database/web/read-and-write). 
+In the `handleSubmit` create a reference called `form-data` in the database. Now we have to use the `push()` method to add the data into database. We can set the values to be pushed using `set()` method. 
+
+>
+ 
