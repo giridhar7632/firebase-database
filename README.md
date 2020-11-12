@@ -1,19 +1,19 @@
 ---
 name: 'Firebase Database'
-description: 'Creating Realtime database of firebase in React'
+description: 'Creating Realtime database of Firebase in React'
 author: '@giridhar7632'
 img: 'https://cloud-3a2lu9qq3.vercel.app/0screenshot_2020-11-09_153841.png'
 ---
 
 # Firebase Database
 
-Have you ever created database for a web applications? In this workshop we are going to create a realtime database using google's Firebase. We are going to build something like this.
+Have you ever created a database for web applications? In this workshop, we are going to create a realtime database using google's Firebase. We are going to build something like this.
 
 ![Final Project](https://cloud-3a2lu9qq3.vercel.app/2screenshot_2020-11-09_163829.png)
 
 [Live Demo](https://firebase-database.giridharhackclu.repl.co/).  [Source Code](https://repl.it/@Giridharhackclu/firebase-database#src/App.js).
 
-Everytime you submit the form, the input given will be updated to the database.
+Every time you submit the form, the input is given will be updated to the database.
 
 ## Prerequisites
 
@@ -27,39 +27,39 @@ You should have some intermediate knowledge about HTML, CSS and JavaScript. Also
 
 ![Database](https://cloud-l2ccvbjwj.vercel.app/1screenshot_2020-11-09_220807.png)
 
-A database is an organized collection of structured information, or data, typically stored electronically in a computer system. Databases are more complex they are often developed using formal design and modeling techniques. Learn more about database [here](https://www.bbc.co.uk/bitesize/topics/zf2f9j6/articles/z8yk87h).
+A database is an organized collection of structured information, or data, typically stored electronically in a computer system. Databases are more complex they are often developed using formal design and modelling techniques. Learn more about database [here](https://www.bbc.co.uk/bitesize/topics/zf2f9j6/articles/z8yk87h).
 
 ### Database as a service 
 
 ![Database as a service](https://cloud-l2ccvbjwj.vercel.app/2screenshot_2020-11-09_221151.png)
 
-Database as a service (DBaaS) is a cloud computing managed service offering that provides access to a database without requiring the setup of physical hardware, the installation of software or the need to configure the database. It is a product which you can use easily, without creating and configuring. One of such type of products is `Firebase`, which is originally created by Google. `Firebase` is great, free(upto some extinct) and easy to use product. It has many services like authentication, cloud storage, realtime database, etc.. In this workshop we are going to use realtime database of Firebase.
+Database as a service (DBaaS) is a cloud computing managed service offering that provides access to a database without requiring the setup of physical hardware, the installation of software or the need to configure the database. It is a product which you can use easily, without creating and configuring. One of such type of products is `Firebase`, which is created by Google. `Firebase` is great, free(up to some extinct) and easy to use the product. It has many services like authentication, cloud storage, realtime database, etc.. In this workshop, we are going to use the realtime database of Firebase.
 
 ### Firebase
 
 <img src="https://cloud-1swt5hmba.vercel.app/5firebase_realtime_database__1-_icon__dark_.png" alt="Firebase REaltime Database" width="200px" height="auto"/>
 
-The Firebase Realtime Database is a cloud-hosted database. Data is stored as JSON and synchronized in realtime to every connected client. We can store and sync data across all clients in realtime, and remains available when your app goes offline. 
+The Firebase Realtime Database is cloud-hosted. Data is stored as JSON and synchronized in realtime to every connected client. We can store and sync data across all clients in realtime and remains available when your app goes offline. 
 
-> **Realtime means** : Instead of typical HTTP requests, the Firebase Realtime Database uses data synchronization—every time data changes, any connected device receives that update within milliseconds. Provide collaborative and immersive experiences without thinking about networking code.
+> **Realtime means**: Instead of typical HTTP requests, the Firebase Realtime Database uses data synchronization—every time data changes, any connected device receives that update within milliseconds. Provide collaborative and immersive experiences without thinking about the networking code.
 
 Learn more about Firebase [here](https://youtu.be/U5aeM5dvUpA)
 
-In this workshop, we will create a form, which stores data into firebase realtime database, when submitted, using [React](https://reactjs.org). 
+In this workshop, we will create a form, which stores data into Firebase realtime database, when submitted, using [React](https://reactjs.org). 
 
 ## Setting up..
 
 ### Code editor
 
-We will be using [Repl.it](https://repl.it) for building our project. Repl.it is a online code editor, where you can code in many different languages without any installations.
+We will be using [Repl.it](https://repl.it) for building our project. Repl.it is an online code editor, where you can code in many different languages without any installations.
 
-Fork this starter repl [here](https://repl.it/@Giridharhackclu/firebase-database-starter). It contains a [create-react-app](https://github.com/facebook/create-react-app) and [firebase](https://www.npmjs.com/package/firebase) installed. The starter-template contains all the styles required, so that we can concentrate on React and Firebase. Click the `Run` button to check your template. You should see something like this.
+Fork this starter repl [here](https://repl.it/@Giridharhackclu/firebase-database-starter). It contains a [create-react-app](https://github.com/facebook/create-react-app) and [firebase](https://www.npmjs.com/package/firebase) installed. The starter-template contains all the styles required so that we can concentrate on React and Firebase. Click the `Run` button to check your template. You should see something like this.
 
 ![Repl](https://cloud-3a2lu9qq3.vercel.app/1screenshot_2020-11-09_160050.png)
 
-### Creating Firebase project
+### Creating a Firebase project
 
-You can access [Firebase](https://firebase.google.com/) with your [Google account](https://myaccount.google.com/). After signing in, click the `Go to console`  on top right corner.
+You can access [Firebase](https://firebase.google.com/) with your [Google account](https://myaccount.google.com/). After signing in, click the `Go to console`  on the top right corner.
 
 ![Firebase](https://cloud-m3srogzel.vercel.app/0screenshot_2020-11-10_101346.png)
 
@@ -75,7 +75,7 @@ After giving a name to your project click the continue button to proceed further
 
 ![Step-2](https://cloud-1swt5hmba.vercel.app/4screenshot_2020-11-09_224518.png)
 
-Click on `Create Project` to finsh setting up your project. After project was created you will see something like this.
+Click on `Create Project` to finish setting up your project. After the project was created you will see something like this.
 
 ![Project setup](https://cloud-axyxh81oj.vercel.app/0screenshot_2020-11-10_122542.png)
 
@@ -116,7 +116,7 @@ function App() {
 export default App;
 ```
 
-Click `Run` button and check your output. All the styles are prewritten. Don't wonder to see this output.
+Click the `Run` button and check your output. All the styles are prewritten. Don't wonder to see this output.
 
 ![form output](https://cloud-naxgpvrzh.vercel.app/0screenshot_2020-11-10_121610.png)
 
@@ -130,7 +130,7 @@ When the data is handled by the components, all the data is stored in the compon
 
 Let's create two state variables each for name and email. 
 
-Don't forget to import `useState` hook from react to use `state`.
+Don't forget to import `useState` hook from React to use `state`.
 
 ```jsx
 import React, { useState } from 'react';     //<----------- useState hook is imported here
@@ -146,7 +146,7 @@ function App(){
 }
 ```
   
-Now add an event handler in the `onChange` attribute. Here, event handler updates the state everytime you enter a letter(i.e, input changed). 
+Now add an event handler in the `onChange` attribute. Here, event handler updates the state every time you enter a letter(i.e, input changed). 
 
 ```jsx
 // all the previous code
@@ -189,7 +189,7 @@ function handleEmail(e) {
 }
 ```
 
-At this stage our `App.js` looks like this.
+At this stage, our `App.js` looks like this.
 
 ```jsx
 import React, { useState } from 'react'; 
@@ -239,7 +239,7 @@ export default App;
 
 ### Submitting Forms
 
-You can control the submit action by adding an event handler in the `onClick` attribute. Create a function `handleSubmit`. Let's first print the form data in `console`. And clear the inputs, everytime submitted.
+You can control the submit action by adding an event handler in the `onClick` attribute. Create a function `handleSubmit`. Let's first print the form data in `console`. And clear the inputs, every time submitted.
 
 ```javascript
 // for submitting form
@@ -253,7 +253,7 @@ function handleSubmit(e){
 
 Usually, on submission of the form, the whole page will be refreshed as default. So we used the [preventDefault()](https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault) method to prevent the default behaviour of the form. 
 
-Call it inside `onClick` event attribute of button.
+Call it inside the `onClick` event attribute of button.
 
 ```jsx
 <button onClick={handleSubmit} > Submit </button>
@@ -318,11 +318,11 @@ export default App;
 ```
 </details>
 
-Click `Run` button and check the output. If you get the value of inputs in the console, then you are good to go.
+Click the `Run` button and check the output. If you get the value of inputs in the console, then you are good to go.
 
 ![Submitting data](https://cloud-d4dcm2tr0.vercel.app/0ezgif.com-gif-maker__6_.gif)
 
-Now that we have a form for adding data to database, means front-end part  was completed. 
+Now that we have a form for adding data to the database, means the front-end part was completed. 
 
 ![Good job](https://cloud-ac5q22xg1.vercel.app/0good_job.gif)
 
@@ -338,7 +338,7 @@ Then register your app with a name. I'm going to give this name.
 
 ![Add name](https://cloud-4zt4ppz2y.vercel.app/0screenshot_2020-11-10_145514.png)
 
-Click on `continue`. Then you will get `Firebase SDK` data. Every user have their own `API` key and Id. Copy the code in the `<script>`. This contains the data to access your firebase.
+Click on `continue`. Then you will get `Firebase SDK` data. Every user has their own `API` key and Id. Copy the code in the `<script>`. This contains the data to access your firebase.
 
 ![SDK Data](https://cloud-4zt4ppz2y.vercel.app/1screenshot_2020-11-10_145822.png)
 
@@ -368,11 +368,11 @@ This is for configuring firebase with our React project. Now let's create a real
 
 ![Sidebar](https://cloud-2zamqusnb.vercel.app/0screenshot__3__li.jpg)
 
-Then Click on `Create Database`.
+Then click on `Create Database`.
 
 ![Create Database](https://cloud-4zhtbdxo9.vercel.app/0screenshot__4__li.jpg)
 
-Make sure you create it in `Test Mode`. It will enable loose options without strict rules..
+Make sure you create it in `Test Mode`. It will enable loose options without strict rules.
 
 ![Test Mode](https://cloud-bugaglghj.vercel.app/0screenshot_2020-11-10_153651.png)
 
@@ -380,7 +380,7 @@ Then your realtime database will be initiated with `null`(means, nothing in it).
 
 ![Database](https://cloud-bugaglghj.vercel.app/1screenshot_2020-11-10_153751.png)
 
-The rules here are important. Initially firebase allows anyone to read and write data in database upto 30 days. You can change the settings at any time in the `Rules` tab.
+The rules here are important. Initially, firebase allows anyone to read and write data in the database for up to 30 days. You can change the settings at any time in the `Rules` tab.
 
 Make sure `write` is set to true. Otherwise, you cannot add data to Firebase.
 
@@ -392,7 +392,7 @@ Before adding data to our firebase, let's first understand how data is structure
 
 ### How is data organised in Firebase?
 
-Data in Firebase is orgainsed in tree like structure using [JSON](https://www.w3schools.com/js/js_json_intro.asp)(JavaScript Object Notation).
+Data in Firebase is organised in tree-like structure using [JSON](https://www.w3schools.com/js/js_json_intro.asp)(JavaScript Object Notation).
 
 All Firebase Realtime Database data is stored as JSON objects. You can think of the database as a cloud-hosted JSON tree. Unlike a SQL database, there are no tables or records. When you add data to the JSON tree, it becomes a node in the existing JSON structure with an associated key. You can provide your own keys, such as user IDs or semantic names, or they can be provided for you using `push()`. Learn more about Firebase data [here](https://firebase.google.com/docs/database/web/structure-data?authuser=0).
 
@@ -418,7 +418,7 @@ In the `handleSubmit` create a collection with a reference called `form-data` in
 let dataRef = fireBase.database().ref('form-data')     // <--------------- creates a reference in database
 ```
 
-Now we have to use the `push()` method to append data to database. 
+Now we have to use the `push()` method to append data to the database. 
 
 ```jsx
 dataRef.push()
@@ -434,11 +434,11 @@ The final `handleSubmit` function will be:
 // All the previous code
 
 function handleSubmit(e) {
-    let dataRef = fireBase.database().ref('form-data')
-    dataRef.push().set({
-      name: name,
-      email: email
-    })
+  let dataRef = fireBase.database().ref('form-data')
+  dataRef.push().set({
+    name: name,
+    email: email
+  })
     
 }
 // All the previous code
@@ -507,6 +507,9 @@ After submission you'll see a collection of `form-data`, inside it you can see t
 
 ![Data in database](https://cloud-bt7imez8z.vercel.app/0screenshot_2020-11-11_185920.png)
 
-You can notice that the submitted data in updated to database in realtime. You don't even have to refresh the window.
+You can notice that the submitted data is updated to the database in realtime. You don't even have to refresh the window.
 
 Check the final code [here]()
+
+
+
