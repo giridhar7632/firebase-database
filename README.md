@@ -322,10 +322,6 @@ Click `Run` button and check the output. If you get the value of inputs in the c
 
 ![Submitting data](https://cloud-d4dcm2tr0.vercel.app/0ezgif.com-gif-maker__6_.gif)
 
-### Validating the form
-
-Here, we used `preventDefault()`, which will prevent the default behaviour of form. That meas it also prevent the default HTML5 validation. So we have to specially validate the form. Also we have to display the user a message that 
-
 Now that we have a form for adding data to database, means front-end part  was completed. 
 
 ![Good job](https://cloud-ac5q22xg1.vercel.app/0good_job.gif)
