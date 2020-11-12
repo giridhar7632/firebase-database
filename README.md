@@ -251,7 +251,7 @@ function handleSubmit(e){
   }
 ```
 
-Here, we prevented the default behaviour of the form using [preventDefault()](https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault) method.
+Usually, on submission of the form, the whole page will be refreshed as default. So we used the [preventDefault()](https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault) method to prevent the default behaviour of the form. 
 
 Call it inside `onClick` event attribute of button.
 
@@ -322,6 +322,10 @@ Click `Run` button and check the output. If you get the value of inputs in the c
 
 ![Submitting data](https://cloud-d4dcm2tr0.vercel.app/0ezgif.com-gif-maker__6_.gif)
 
+### Validating the form
+
+Here, we used `preventDefault()`, which will prevent the default behaviour of form. That meas it also prevent the default HTML5 validation. So we have to specially validate the form. Also we have to display the user a message that 
+
 Now that we have a form for adding data to database, means front-end part  was completed. 
 
 ![Good job](https://cloud-ac5q22xg1.vercel.app/0good_job.gif)
@@ -332,7 +336,7 @@ Now that we have a form for adding data to database, means front-end part  was c
 
 Now open the [firebase console](https://console.firebase.google.com) you left before and open the current project folder. We can use firebase for different platforms. But for now, we are going to use it for `web(</>)`. Click on `</>` button. You will see something like this.
 
-![Console](https://cloud-j3vz1auk3.vercel.app/0ezgif.com-gif-maker__7_.gif)
+![Console output](https://cloud-j3vz1auk3.vercel.app/0ezgif.com-gif-maker__7_.gif)
 
 Then register your app with a name. I'm going to give this name.
 
@@ -509,3 +513,4 @@ After submission you'll see a collection of `form-data`, inside it you can see t
 
 You can notice that the submitted data in updated to database in realtime. You don't even have to refresh the window.
 
+Check the final code [here]()
