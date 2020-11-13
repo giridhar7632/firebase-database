@@ -509,7 +509,35 @@ After submission you'll see a collection of `form-data`, inside it you can see t
 
 You can notice that the submitted data is updated to the database in realtime. You don't even have to refresh the window.
 
-Check the final code [here]()
+Check the final code [here](https://repl.it/@Giridharhackclu/firebase-database#src/App.js)
 
+## Hacking
 
+We created a database and added data to it through a form. It's time for you to take a role.
+
+* In Firebase, you can create and delete data directly in database.
+* Try to validate the form. You can use conditional rendering for achieving this.
+* You can also data of high-score of your game, update every time and display it on the webpage.
+* You can create different collection in your database. Try adding different reference for the name, email and message for the above example.
+* Here, we created different handle events for different elements. But if you have a form with more number of inputs, you will be violating `Do Not Repeat Yourself` principle of programming. Try create a custom hook, for handling the form. Learn about creating custom hooks [here](https://reactjs.org/docs/hooks-custom.html).
+
+Also explore different services of Firebase [here](https://firebase.google.com/docs/web/setup?authuser=0).
+
+Try using Firebase in your projects and share it with me on slack. I'm as [@Giridhar]() on slack. I'd love to hear from you. Hope you love this workshop. :v:
+
+## Inspiration
+
+Check out these other projects:
+
+* **Form using Custom Hook**: `useInput` hook is created for handling multiple inputs.
+
+  [Demo](https://Form-using-Custom-hooks.giridharhackclu.repl.co). [Source Code](https://repl.it/@Giridharhackclu/Form-using-Custom-hooks#src/App.js).
+
+* **Contact Form**: You can create a contact form and collect the data from your users.
+
+  [Demo](https://Contact-form.giridharhackclu.repl.co).  [Source Code](https://repl.it/@Giridharhackclu/Contact-form#src/App.js).
+  
+* **Validated Form**: Complete functioning validated form.
+  
+  [Demo](https://Form-vadilated.giridharhackclu.repl.co). [Source Code](https://repl.it/@Giridharhackclu/Form-vadilated#src/App.js).
 
